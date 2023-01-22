@@ -212,7 +212,7 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-let fruitJSON = JSON.stringify(fruits);
+let fruitsJSON2 = JSON.stringify(fruits);
 
 // перемешивание массива
 const shuffleFruits = () => {
@@ -229,13 +229,12 @@ const shuffleFruits = () => {
     let takeFruit = fruits.splice(random, 1)[0];
     result.push(takeFruit);
   }
-  const resultJSON = JSON.stringify(result);
-  console.log(resultJSON); 
-    
-  let kk = resultJSON !== fruitsJSON
-  console.log(kk)
+  const resultJSON = JSON.stringify(result);    
 
-    fruits = result;    
+  if (resultJSON == fruitsJSON2) {
+    alert('не перемешалось! нажми еще')
+    }
+      fruits = result;    
 };
 
 

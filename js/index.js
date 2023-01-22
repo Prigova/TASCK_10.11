@@ -210,14 +210,12 @@ display();
 // генерация случайного числа в заданном диапазоне
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-let fruitsJSON2 = JSON.stringify(fruits);
+};let fruitsJSON2 = JSON.stringify(fruits);
 
 // перемешивание массива
 const shuffleFruits = () => {
   let result = [];
-  console.log(fruitJSON);
+
 // ATTENTION: сейчас при клике вы запустите бесконечный цикл и браузер зависнет
   while (fruits.length > 0) { 
 // TODO: допишите функцию перемешивания массива
@@ -229,11 +227,13 @@ const shuffleFruits = () => {
     let takeFruit = fruits.splice(random, 1)[0];
     result.push(takeFruit);
   }
-  const resultJSON = JSON.stringify(result);    
+ let resultJSON = JSON.stringify(result);    
 
-  if (resultJSON == fruitsJSON2) {
-    alert('не перемешалось! нажми еще')
-    }
+let comparison = resultJSON == fruitsJSON2
+
+if (comparison === true) {
+ alert('не перемешалось! нажми еще')
+ }
       fruits = result;    
 };
 
